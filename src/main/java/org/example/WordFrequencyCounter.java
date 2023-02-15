@@ -35,7 +35,7 @@ public class WordFrequencyCounter {
 
             scanner.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            Logger.getGlobal();
         }
     }
 }
