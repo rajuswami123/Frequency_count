@@ -16,7 +16,7 @@ public class WordFrequencyCounter {
                 Comparator.comparingInt(Map.Entry<String, Integer>::getValue).reversed());
 
         try {
-            File file = new File("C:\\Users\\Tringapps-user20\\Documents\\test.txt");
+            File file = new File(""+"C:\\Users\\Tringapps-user20\\Documents\\test.txt");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNext()) {
