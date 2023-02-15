@@ -6,15 +6,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class WordFrequencyCounter {
     public static void main(String[] args) {
+        Logger ou = Logger.getLogger("com.api.jar");
         Map<String, Integer> wordFrequencyMap = new HashMap<>();
         PriorityQueue<Map.Entry<String, Integer>> wordFrequencyQueue = new PriorityQueue<>(
                 Comparator.comparingInt(Map.Entry<String, Integer>::getValue).reversed());
 
         try {
-            File file = new File("input.txt");
+            File file = new File("C:\\Users\\Tringapps-user20\\Documents\\test.txt");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNext()) {
@@ -28,7 +30,7 @@ public class WordFrequencyCounter {
 
             while (!wordFrequencyQueue.isEmpty()) {
                 Map.Entry<String, Integer> entry = wordFrequencyQueue.poll();
-                System.out.println(entry.getKey() + ": " + entry.getValue());
+                ou.info(entry.getKey() + ": " + entry.getValue());
             }
 
             scanner.close();
